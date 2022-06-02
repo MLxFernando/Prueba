@@ -9,5 +9,6 @@ import com.prueba.prueba.model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product,Long> {
-    public List<Product> findByTitle(String criteria);
+    public List<Product> findByName(String name);
 }
+
