@@ -21,9 +21,9 @@ public class Product {
     private Long id;
     @Column(name = "NAME", nullable = false, length = 100)
     private String name;
-    @Column(name = "PRICE")
+    @Column(name = "PRICE", precision = 4, scale = 2)
     private double price;
-    @Column(name = "WEIGHT")
+    @Column(name = "WEIGHT", precision = 4, scale = 2)
     private double weight;
     @Column(name = "EXPIRATION_DATE")
     private String expirationDate;

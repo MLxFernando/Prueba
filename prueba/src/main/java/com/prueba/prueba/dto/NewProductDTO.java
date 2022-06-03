@@ -18,6 +18,5 @@ public class NewProductDTO {
     @NotNull(message = "Weight can't be null.")
     private double weight;
     private String expirationDate;
-    @Max(message = "out of stock",value = 20)
     private String stock;
 }
