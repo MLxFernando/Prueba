@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService{
     @Transactional(readOnly = true)
     public ProductDTO retrieve(Long id) {
         Product product = productRepository.findById(id)
-            .orElseThrow(()-> new ResourceNotFoundException("Product not valid"));
+            .orElseThrow(()-> new ResourceNotFoundException("Product not found"));
         return modelMapper.map(product, ProductDTO.class);
     }
 
@@ -47,7 +47,7 @@ public class ProductServiceImpl implements ProductService{
     @Transactional
     public ProductDTO update(ProductDTO productDTO, Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Product not found"));
+                .orElseThrow(()-> new ResourceNotFoundException("Product not valid"));
         
         product.setId(id);
         product = modelMapper.map(productDTO, Product.class);
